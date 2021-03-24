@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @pets = Pets.all
-    rendes json: @pets
+    @pets = Pet.all
+    render json: @pets
   end
 end
