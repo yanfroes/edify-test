@@ -22,7 +22,7 @@ class PetsController < ApplicationController
     @pet = current_user.pets.build(pet_params)
 
     if @pet.save
-      render json: @pet, status: :created, location: @pet
+      render json: @pet, status: :created
     else
       render json: @pet.errors, status: :unprocessable_entity
     end
