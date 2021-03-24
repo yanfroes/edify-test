@@ -6,17 +6,17 @@
         <div class="text-red" v-if="error">{{ error }}</div>
 
         <div class="mb-6">
-          <label for="name" class="label">Name</label>
+          <label for="name" class="label">Name</label><br>
           <input type="name" v-model="name" class="input" id="name" placeholder="Yan Fróes">
         </div>
 
         <div class="mb-6">
-          <label for="email" class="label">E-mail Address</label>
+          <label for="email" class="label">E-mail Address</label><br>
           <input type="email" v-model="email" class="input" id="email" placeholder="yan@edifyonline.com">
         </div>
 
         <div class="mb-6">
-          <label for="password" class="label">Password</label>
+          <label for="password" class="label">Password</label><br>
           <input type="password" v-model="password" class="input" id="password" placeholder="Password">
         </div>
 

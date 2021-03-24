@@ -6,10 +6,10 @@
       <div class="mb-6">
         <input class="input"
           autofocus autocomplete="off"
-          placeholder="Type a Pet name"
+          placeholder="Name of your Pet"
           v-model="newPet.name" />
       </div>
-      <input type="submit" value="Add Pet" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 text-white items-center justify-center" />
+      <input type="submit" value="Add Pet" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 items-center justify-center" />
     </form>
 
     <hr class="border border-grey-light my-6" />
@@ -23,20 +23,8 @@
             {{ pet.name }}
           </p>
 
-          <button class="bg-tranparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py-2 px-4 mr-2 rounded"
-          @click.prevent="editPet(pet)">Edit</button>
-
           <button class="bg-transprent text-sm hover:bg-red text-red hover:text-white no-underline font-bold py-2 px-4 rounded border border-red"
          @click.prevent="removePet(pet)">Delete</button>
-        </div>
-
-        <div v-if="pet == editedPet">
-          <form action="" @submit.prevent="updatePet(pet)">
-            <div class="mb-6 p-4 bg-white rounded border border-grey-light mt-4">
-              <input class="input" v-model="pet.name" />
-              <input type="submit" value="Update" class=" my-2 bg-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py-2 px-4 rounded cursor-pointer">
-            </div>
-          </form>
         </div>
       </li>
     </ul>
@@ -86,14 +74,6 @@ export default {
           this.pets.splice(this.pets.indexOf(pet), 1)
         })
         .catch(error => this.setError(error, 'Cannot delete pet'))
-    },
-    editPet (pet) {
-      this.editedpet = pet
-    },
-    updatePet (pet) {
-      this.editedPet = ''
-      this.$http.secured.patch(`/api/v1/pets/${pet.id}`, { pet: { title: pet.name } })
-        .catch(error => this.setError(error, 'Cannot update pet'))
     }
   }
 }

@@ -6,14 +6,14 @@
         <div class="text-red" v-if="error">{{ error }}</div>
 
         <div class="mb-6">
-          <label for="email" class="label">E-mail Address</label>
+          <label for="email" class="label">E-mail Address</label><br>
           <input type="email" v-model="email" class="input" id="email" placeholder="yan@edifyonline.com">
         </div>
         <div class="mb-6">
-          <label for="password" class="label">Password</label>
+          <label for="password" class="label">Password</label><br>
           <input type="password" v-model="password" class="input" id="password" placeholder="Password">
         </div>
-        <button type="submit" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 text-white items-center justify-center">Sign In</button>
+        <button type="submit" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 items-center justify-center">Sign In</button>
 
         <div class="my-4"><router-link to="/signup" class="link-grey">Sign up</router-link></div>
       </form>
