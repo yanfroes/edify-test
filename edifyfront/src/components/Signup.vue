@@ -68,8 +68,9 @@ export default {
       localStorage.csrf = response.data.csrf
       localStorage.signedIn = true
       this.error = ''
-      this.$router.replace('/pets')
       this.$http.secured.post('/api/v1/pets/', { pet: { name: this.newPet.name } })
+      this.$router.replace('/pets')
+
     },
     signupFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'
