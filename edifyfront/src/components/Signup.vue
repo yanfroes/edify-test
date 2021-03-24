@@ -20,6 +20,11 @@
           <input type="password" v-model="password" class="input" id="password" placeholder="Password">
         </div>
 
+        <div class="mb-6">
+          <label for="newPet" class="label">Pet Name</label><br>
+          <input type="newPet" v-model="newPet.name" class="input" id="petname" placeholder="Pet name">
+        </div>
+
         <button type="submit" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 items-center justify-center">Sign Up</button>
 
         <div class="my-4"><router-link to="/" class="link-grey">Sign In</router-link></div>
@@ -36,6 +41,7 @@ export default {
       name: '',
       email: '',
       password: '',
+      newPet: [],
       error: ''
     }
   },
@@ -47,7 +53,7 @@ export default {
   },
   methods: {
     signup () {
-      this.$http.plain.post('/signup', { name: this.name, email: this.email, password: this.password })
+      this.$http.plain.post('/signup', { name: this.name, email: this.email, password: this.password, petname: this.newPet.name })
         .then(response => this.signupSuccessful(response))
         .catch(error => this.signupFailed(error))
     },

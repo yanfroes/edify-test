@@ -11,7 +11,7 @@
       </div>
       <input type="submit" value="Add Pet" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 items-center justify-center" />
     </form>
-
+    <button v-on:click="greet" v-for="pet in pets" :key="pet.id" :pet="pet">{{ pet.name }}</button>
     <hr class="border border-grey-light my-6" />
 
     <ul class="list-reset mt-4">
@@ -38,8 +38,7 @@ export default {
     return {
       pets: [],
       newPet: [],
-      error: '',
-      editedPet: ''
+      error: ''
     }
   },
   created () {
@@ -54,6 +53,10 @@ export default {
   methods: {
     setError (error, text) {
       this.error = (error.response && error.response.data && error.response.data.error) || text
+    },
+    greet: function (event) {
+      // `this` dentro de métodos aponta para a instância Vue
+      alert(pet.name)
     },
     addPet () {
       const value = this.newPet
