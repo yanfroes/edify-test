@@ -41,6 +41,7 @@ export default {
       name: '',
       email: '',
       password: '',
+      pets: [],
       newPet: [],
       error: ''
     }
@@ -53,9 +54,10 @@ export default {
   },
   methods: {
     signup () {
-      this.$http.plain.post('/signup', { name: this.name, email: this.email, password: this.password, petname: this.newPet.name })
+      this.$http.plain.post('/signup', { name: this.name, email: this.email, password: this.password })
         .then(response => this.signupSuccessful(response))
         .catch(error => this.signupFailed(error))
+
     },
     signupSuccessful (response) {
       if (!response.data.csrf) {
@@ -67,6 +69,7 @@ export default {
       localStorage.signedIn = true
       this.error = ''
       this.$router.replace('/pets')
+      this.$http.secured.post('/api/v1/pets/', { pet: { name: this.newPet.name } })
     },
     signupFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'

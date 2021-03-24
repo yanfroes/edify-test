@@ -5,7 +5,7 @@ namespace :pets_name do
     id = ENV["id"]
     pets.each do |pet|
      if pet.user_id.to_s == id
-       pet.update(name: "Crazy")
+       pet.update(name: "Sirius")
      else
      end
     end

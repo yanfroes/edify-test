@@ -11,7 +11,7 @@
       </div>
       <input type="submit" value="Add Pet" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 items-center justify-center" />
     </form>
-    <button v-on:click="greet" v-for="pet in pets" :key="pet.id" :pet="pet">{{ pet.name }}</button>
+    <button v-on:click="greet" v-for="pet in pets" :key="pet.id" :pet="pet">Alert</button>
     <hr class="border border-grey-light my-6" />
 
     <ul class="list-reset mt-4">
@@ -56,7 +56,7 @@ export default {
     },
     greet: function (event) {
       // `this` dentro de métodos aponta para a instância Vue
-      alert(pet.name)
+      alert('This ' + Math.floor(Math.random(this.pet.name)) + 'is fluffy!')
     },
     addPet () {
       const value = this.newPet

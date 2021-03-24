@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_secure_password
   has_many :pets, dependent: :destroy
+  accepts_nested_attributes_for :pets
 
   def create_two_pets
     Pet.create(user_id: self.id, name: "Sukita")
