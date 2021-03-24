@@ -30,6 +30,7 @@ gem 'rack-cors'
 
 #mygems
 gem 'jwt_sessions', '~> 2.3'
+gem 'rubocop', '~> 1.12', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

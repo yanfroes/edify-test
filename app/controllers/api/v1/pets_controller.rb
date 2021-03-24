@@ -1,3 +1,6 @@
+module Api
+  module V1
+
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :update, :destroy]
 
@@ -48,4 +51,7 @@ class PetsController < ApplicationController
     def pet_params
       params.require(:pet).permit(:name, :user_id)
     end
+end
+
+end
 end
