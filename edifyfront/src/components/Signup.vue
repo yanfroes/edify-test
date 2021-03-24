@@ -20,7 +20,7 @@
           <input type="password" v-model="password" class="input" id="password" placeholder="Password">
         </div>
 
-        <button type="submit" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 text-white items-center justify-center">Sign Up</button>
+        <button type="submit" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 items-center justify-center">Sign Up</button>
 
         <div class="my-4"><router-link to="/" class="link-grey">Sign In</router-link></div>
       </form>
@@ -60,7 +60,7 @@ export default {
       localStorage.csrf = response.data.csrf
       localStorage.signedIn = true
       this.error = ''
-      this.$router.replace('/records')
+      this.$router.replace('/pets')
     },
     signupFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'
@@ -69,7 +69,7 @@ export default {
     },
     checkedSignedIn () {
       if (localStorage.signedIn) {
-        this.$router.replace('/records')
+        this.$router.replace('/pets')
       }
     }
   }
