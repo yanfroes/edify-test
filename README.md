@@ -28,7 +28,6 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 > rails db:migrate
 * Run the project:
 > rails s
-* Enter http://localhost:3000 to access the API
 
 ## To run the front-end project:
 * Open a new terminal and enter in the edifyfront folder
