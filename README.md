@@ -14,6 +14,8 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 ## Database
 <img src="https://i.ibb.co/0GdtQF4/Screenshot-2021-03-25-Edify-Db-Designer-net.png" alt="Screenshot-2021-03-25-Edify-Db-Designer-net" border="0">
 
+## First download this project!
+
 ## To run the backend project:
 * To install:
 > gem install bundler && bundle install
