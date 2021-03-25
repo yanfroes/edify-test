@@ -26,6 +26,7 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 > rails db:migrate
 * Run the project:
 > rails s
+* Enter http://localhost:3000 to access the API
 
 ## To run the front-end project:
 * Enter in the edifyfront folder
@@ -34,6 +35,7 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 > npm install
 * Serve with hot reload at localhost:8080
 > npm run dev
+* Enter http://localhost:8080 to access the Front-end
 
 ## To run the rake task to update pet names to "Sirius" (change "number" to the user_id you want):
 > Enter in the edify-test folder<br>
