@@ -24,11 +24,8 @@
           <label for="newPet" class="label">Pet Name</label><br>
           <input type="newPet" v-model="newPet.name" class="input" id="petname" placeholder="Pet name">
         </div><br>
-
         <button type="submit" class="btn btn-dark">Sign Up</button>
-
-        <router-link to="/"><button type="submit" class="btn btn-primary">Sign In</button></router-link>
-        
+        <router-link to="/"><button class="btn btn-primary">Sign In</button></router-link>
       </form>
     </div>
   </div>
