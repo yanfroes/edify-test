@@ -44,10 +44,15 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 > redis-server (if you dont have redis installed: https://redis.io/topics/quickstart<br>
 > rake call_job_rename:update_pet_name id=number<br>
 
-## To run the front end tests (in progress):
+## To run the back-end tests (in progress):
+* Run unit tests
+> rspec
+
+## To run the front-end tests (in progress):
 * Run unit tests
 > npm run unit
 * Run all tests
 > npm test
+
 
 * **Yan Fróes**: @yanfroes (https://github.com/yanfroes)
