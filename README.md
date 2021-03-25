@@ -1,3 +1,4 @@
+<img src="https://i.ibb.co/QPp0JJn/icon-edify.jpg" alt="icon-edify" border="0">
 ## EdifyOnline - Junior Developer Challenge (https://www.edifyonline.com/)
 
 This is the challenge: https://github.com/mvelosos/edify-developer-test
