@@ -1,4 +1,4 @@
-<img style="max-height:150px" src="https://i.ibb.co/QPp0JJn/icon-edify.jpg" alt="icon-edify" border="0">
+<img src="https://i.ibb.co/ZXDBk9Y/edify.jpg" alt="edify" border="0">
 
 ## EdifyOnline - Junior Developer Challenge (https://www.edifyonline.com/)
 
