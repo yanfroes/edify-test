@@ -10,7 +10,10 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 * Redis
 * Sidekiq
 * Rspec
- 
+
+## Database
+![alt text](https://ibb.co/1zGj0df)
+
 ## To run the backend project:
 * To install:
 > gem install bundler && bundle install
