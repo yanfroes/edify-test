@@ -1,35 +1,38 @@
 <template>
-  <div>
+  <div class="container">
     <div v-if="error">{{ error }}</div>
-    <h3>Add a new pet</h3>
+    <h3>Add a new pet</h3><br>
     <form action="" @submit.prevent="addPet">
       <div>
         <input class="input"
           autofocus autocomplete="off"
           placeholder="Name of your Pet"
           v-model="newPet.name" />
-      </div>
-      <input type="submit" value="Add Pet" />
+      </div><br>
+      <input class="btn btn-success" type="submit" value="Add Pet" />
     </form>
     <hr />
     <div>
      <!--  PET ALERT -->
-     <button v-on:click="petalert">PET ALERT</button>
-    </div>
+     <button class="btn btn-warning" v-on:click="petalert">PET ALERT</button>
+    </div><br>
 
-    <ul>
-      <li class="py-4" v-for="pet in pets" :key="pet.id" :pet="pet">
-
-        <div>
-          <p>
-            <svg class="fill-current text-indigo w-6 h-6 mr-2" viewBox="0 0 20 20" width="20" height="20"><title>Pet Name</title><path d="M15.75 8l-3.74-3.75a3.99 3.99 0 0 1 6.82-3.08A4 4 0 0 1 15.75 8zm-13.9 7.3l9.2-9.19 2.83 2.83-9.2 9.2-2.82-2.84zm-1.4 2.83l2.11-2.12 1.42 1.42-2.12 2.12-1.42-1.42zM10 15l2-2v7h-2v-5z"></path></svg>
-            {{ pet.name }}
-          </p>
-
-          <button @click.prevent="removePet(pet)">Delete</button>
-        </div>
-      </li>
-    </ul>
+    <table class="table ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Pet Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="pet in pets" :key="pet.id" :pet="pet">
+      <th scope="row">{{ pet.id }}</th>
+      <td>{{ pet.name }}</td>
+      <td><button class="btn btn-danger" @click.prevent="removePet(pet)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
   </div>
 </template>
 
@@ -79,7 +82,7 @@ export default {
     petalert: function (pet) {
       var chosenNumber = Math.floor(Math.random() * this.pets.length)
       this.chosenName = this.pets[chosenNumber]
-      alert('This ' + this.chosenName.name + ' is a Fluffy one!')
+      alert('This ' + this.chosenName.name + ' is Fluffy!')
     }
   }
 }

@@ -1,21 +1,22 @@
 <template>
-  <div>
+  <div class="container">
     <div>
       <h3>Sign In</h3>
       <form @submit.prevent="signin">
         <div v-if="error">{{ error }}</div>
 
-        <div class="mb-6">
+        <div>
           <label for="email" class="label">E-mail Address</label><br>
           <input type="email" v-model="email" class="input" id="email" placeholder="yan@edifyonline.com">
         </div>
-        <div class="mb-6">
+        <div>
           <label for="password" class="label">Password</label><br>
           <input type="password" v-model="password" class="input" id="password" placeholder="Password">
         </div>
-        <button type="submit">Sign In</button>
-
-        <div class="my-4"><router-link to="/signup">Sign up</router-link></div>
+        <div><br>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <router-link to="/signup"><button class="btn btn-dark">Sign Up</button></router-link>
+       </div>
       </form>
     </div>
   </div>

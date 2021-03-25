@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div>
       <h3>Sign Up</h3>
       <form @submit.prevent="signup">
@@ -23,11 +23,12 @@
         <div class="mb-6">
           <label for="newPet" class="label">Pet Name</label><br>
           <input type="newPet" v-model="newPet.name" class="input" id="petname" placeholder="Pet name">
-        </div>
+        </div><br>
 
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="btn btn-dark">Sign Up</button>
 
-        <div class="my-4"><router-link to="/">Sign In</router-link></div>
+        <router-link to="/"><button type="submit" class="btn btn-primary">Sign In</button></router-link>
+        
       </form>
     </div>
   </div>
