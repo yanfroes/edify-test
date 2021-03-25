@@ -45,7 +45,7 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 > rake pets_name:update_pet_name id=number
 
 ## To run the rake task to call a job to update pet names to "Sirius" (change "number" to the user_id you want):
-> Enter in the edify-test folder<br>
+> Enter in the edify-test folder - the redis-server needs to be up<br>
 > rake call_job_rename:update_pet_name id=number<br>
 
 ## To run the back-end tests (in progress):
