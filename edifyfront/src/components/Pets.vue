@@ -11,8 +11,11 @@
       </div>
       <input type="submit" value="Add Pet" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 items-center justify-center" />
     </form>
-    <button v-on:click="greet" v-for="pet in pets" :key="pet.id" :pet="pet">Alert</button>
     <hr class="border border-grey-light my-6" />
+    <div>
+     <!--  PET ALERT -->
+     <button v-on:click="petalert">PET ALERT</button>
+    </div>
 
     <ul class="list-reset mt-4">
       <li class="py-4" v-for="pet in pets" :key="pet.id" :pet="pet">
@@ -38,6 +41,7 @@ export default {
     return {
       pets: [],
       newPet: [],
+      chosenName: '',
       error: ''
     }
   },
@@ -54,17 +58,12 @@ export default {
     setError (error, text) {
       this.error = (error.response && error.response.data && error.response.data.error) || text
     },
-    greet: function (event) {
-      // `this` dentro de métodos aponta para a instância Vue
-      alert('This ' + Math.floor(Math.random(this.pet.name)) + 'is fluffy!')
-    },
     addPet () {
       const value = this.newPet
       if (!value) {
         return
       }
-      this.$http.secured.post('/api/v1/pets/', { pet: { name: this.newPet.name } })
-
+      this.$http.secured.post('/api/v1/pets/', { pet: { name: this.newPet.name } }).$router.replace('/pets')
         .then(response => {
           this.pets.push(response.data)
           this.newPet = ''
@@ -77,6 +76,11 @@ export default {
           this.pets.splice(this.pets.indexOf(pet), 1)
         })
         .catch(error => this.setError(error, 'Cannot delete pet'))
+    },
+    petalert: function (pet) {
+      var chosenNumber = Math.floor(Math.random() * this.pets.length);
+      this.chosenName = this.pets[chosenNumber];
+      alert('This ' + this.chosenName.name + ' is a Fluffy one!')
     }
   }
 }

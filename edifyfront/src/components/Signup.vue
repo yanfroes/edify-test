@@ -57,7 +57,6 @@ export default {
       this.$http.plain.post('/signup', { name: this.name, email: this.email, password: this.password })
         .then(response => this.signupSuccessful(response))
         .catch(error => this.signupFailed(error))
-
     },
     signupSuccessful (response) {
       if (!response.data.csrf) {
@@ -65,12 +64,11 @@ export default {
         return
       }
 
+      this.$http.secured.post('/api/v1/pets/', { pet: { name: this.newPet.name } })
       localStorage.csrf = response.data.csrf
       localStorage.signedIn = true
       this.error = ''
-      this.$http.secured.post('/api/v1/pets/', { pet: { name: this.newPet.name } })
       this.$router.replace('/pets')
-
     },
     signupFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'
