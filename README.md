@@ -12,7 +12,7 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 * Rspec
 
 ## Database
-<img style="max-height:100px" src="https://i.ibb.co/9ZHSpV9/Screenshot-2021-03-24-Edify-Db-Designer-net.png" alt="Screenshot-2021-03-24-Edify-Db-Designer-net" border="0">
+<img src="https://i.ibb.co/0GdtQF4/Screenshot-2021-03-25-Edify-Db-Designer-net.png" alt="Screenshot-2021-03-25-Edify-Db-Designer-net" border="0">
 
 ## To run the backend project:
 * To install:
