@@ -28,15 +28,13 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 * Serve with hot reload at localhost:8080
 > npm run dev
 
-## To run the rake task to update pet names to "Sirius":
-> rake pets_name:update_pet_name id=number<br>
-> change "number" to the user_id you want
+## To run the rake task to update pet names to "Sirius" (change "number" to the user_id you want):
+> rake pets_name:update_pet_name id=number
 
-## To run the rake task to call a job to update pet names to "Sirius":
+## To run the rake task to call a job to update pet names to "Sirius" (change "number" to the user_id you want):
 * You will need to run redis-server to call the job
 > redis-server (if you dont have redis installed: https://redis.io/topics/quickstart<br>
-> rake call_job_rename:update_pet_name id=2<br>
-> change "number" to the user_id you want
+> rake call_job_rename:update_pet_name id=number<br>
 
 ## To run the front end tests (in progress):
 * Run unit tests
