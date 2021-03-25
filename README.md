@@ -19,7 +19,8 @@ This is the challenge: https://github.com/mvelosos/edify-developer-test
 ## To run the back-end project:
 * Enter in the edify-test folder
 * To install:
-> gem install bundler && bundle install
+> gem install bundler<br>
+> bundle install
 * Create and migrate the database:
 > rails db:create <br>
 > rails db:migrate
